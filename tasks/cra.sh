@@ -82,5 +82,8 @@ yarn cache clean || true
 cd "$root_path"
 node packages/create-react-app/index.js --scripts-version="$scripts_path" "$@"
 
+# Install redux and react-redux
+yarn add redux react-redux
+
 # Cleanup
 cleanup
