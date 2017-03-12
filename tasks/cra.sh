@@ -20,6 +20,11 @@ function cleanup {
   # rm ./template/src/__snapshots__/App.test.js.snap
 }
 
+function redux {
+  echo 'Installing Redux...'
+  yarn add redux react-redux
+}
+
 # Error messages are redirected to stderr
 function handle_error {
   echo "$(basename $0): ERROR! An error was encountered executing line $1." 1>&2;
@@ -83,7 +88,7 @@ cd "$root_path"
 node packages/create-react-app/index.js --scripts-version="$scripts_path" "$@"
 
 # Install redux and react-redux
-yarn add redux react-redux
+redux
 
 # Cleanup
 cleanup
